@@ -1,5 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  TouchableHighlight,
+  View,
+  Image,
+  SafeAreaView,
+  Button
+} from 'react-native';
 
 export default function App() {
   const handlePress = () => console.log("Text pressed.");
@@ -9,13 +19,16 @@ export default function App() {
       <Text numberOfLines={1} onPress={handlePress}>
         Hello, World!
       </Text>
-      <Image
-        blurRadius={10}
+      <TouchableHighlight onPress={() => console.log("Image pressed.")}>
+        <Image
+        blurRadius={0}
         fadeDuration={1000}
         source={{
           width: 200,
           height: 300,
           uri: "https://picsum.photos/200/300"}} />
+      </TouchableHighlight>
+      <Button title="Click Me" onPress={() => console.log("Button pressed.")}/>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -24,7 +37,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
