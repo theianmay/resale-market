@@ -14,10 +14,12 @@ import {
   Dimensions,
   useWindowDimensions
 } from 'react-native';
-// import { useDimensions } from '@react-native-community/hooks';
+ import { useDeviceOrientation } from '@react-native-community/hooks';
 
 export default function App() {
   console.log(useWindowDimensions());
+  
+  const {landscape} = useDeviceOrientation();
   
   const handlePress = () => console.log("Text pressed.");
   
@@ -45,7 +47,7 @@ export default function App() {
       <View style={{
         backgroundColor: 'dodgerblue',
         width: "100%",
-        height: "30%",
+        height: landscape ? '100%': '30%',
       }}
       ></View>
       <StatusBar style="auto" />
