@@ -1,66 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import {
-  StyleSheet,
-  Text,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableHighlight,
-  View,
-  Image,
-  SafeAreaView,
-  Button,
-  Alert,
-  Platform,
-  Dimensions,
-  useWindowDimensions
-} from 'react-native';
- import { useDeviceOrientation } from '@react-native-community/hooks';
+import React from 'react';
+import { View } from 'react-native';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 export default function App() {
-  console.log(useWindowDimensions());
-  
-  const {landscape} = useDeviceOrientation();
-  
-  const handlePress = () => console.log("Text pressed.");
-  
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Hello, World!
-      </Text>
-      <TouchableHighlight onPress={() => console.log("Image pressed.")}>
-        <Image
-        blurRadius={0}
-        fadeDuration={1000}
-        source={{
-          width: 200,
-          height: 300,
-          uri: "https://picsum.photos/200/300"}} />
-      </TouchableHighlight>
-      <Button
-        color="blue"
-        title="Click Me"
-        onPress={() => Alert.alert("My title", "My message", [
-        {text: "Yes", onPress: () => console.log("Yes")},
-        {text: "No", onPress: () => console.log("No")}
-        ])} />
-      <View style={{
-        backgroundColor: 'dodgerblue',
-        width: "100%",
-        height: landscape ? '100%': '30%',
-      }}
-      ></View>
-      <StatusBar style="auto" />
-    </SafeAreaView>
-  );
+  return <WelcomeScreen />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: Platform.OS === 'android' ? 20 : 0,
-  },
-});
