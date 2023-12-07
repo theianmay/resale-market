@@ -9,11 +9,10 @@ function ViewImageScreen(props) {
     return (
         <View style={styles.container}>
             <View style={styles.closeIcon}>
-                <MaterialCommunityIcons name="close-thick" size={50} />
+                <MaterialCommunityIcons name="close" color="white" size={35} />
         </View>
             <View style={styles.deleteIcon}>
-                <MaterialCommunityIcons name="delete" size={50} />
-
+                <MaterialCommunityIcons name="trash-can-outline" color="white" size={35} />
         </View>
         <Image
             resizeMode='contain'
@@ -25,17 +24,11 @@ function ViewImageScreen(props) {
 
 const styles = StyleSheet.create({
     closeIcon: {
-        width: 50,
-        height: 50,
-        backgroundColor: colors.primary,
         position: 'absolute',
         top: 50,
         left: 40,
     },
     deleteIcon: {
-        width: 50,
-        height: 50,
-        backgroundColor: colors.secondary,
         position: 'absolute',
         top: 50,
         right: 40,
