@@ -49,7 +49,11 @@ function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
             renderItem={({ item }) => (
               <PickerItem>
                 label={item.label}
-                onPress={() => console.log(item)}
+                onPress=
+                {() => {
+                  setModalVisible(false);
+                  onSelectItem(item);
+                }}
               </PickerItem>
             )}
           />
