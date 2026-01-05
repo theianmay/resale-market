@@ -10,9 +10,10 @@ import MessagesScreen from "./app/screens/MessagesScreen";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import LoginScreen from "./app/screens/LoginScreen";
+import RegsiterScreen from "./app/screens/RegisterScreen";
 
 import Screen from "./app/components/Screen";
 
 export default function App() {
-  return <LoginScreen />;
+  return <RegsiterScreen />;
 }
