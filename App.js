@@ -13,7 +13,8 @@ import LoginScreen from "./app/screens/LoginScreen";
 import RegsiterScreen from "./app/screens/RegisterScreen";
 
 import Screen from "./app/components/Screen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 export default function App() {
-  return <RegsiterScreen />;
+  return <ListingEditScreen />;
 }
